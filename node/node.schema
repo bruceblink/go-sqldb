@@ -1,0 +1,46 @@
+struct Header {
+  IsInternal bool
+  IsRoot bool
+  Parent uint32
+}
+
+struct InternalNodeHeader {
+  KeysNum uint32
+  RightChild uint32
+}
+
+struct LeafNodeHeader {
+  Cells uint32
+  NextLeaf uint32
+}
+
+struct ICell {
+  Key uint32
+  Child uint32
+}
+
+struct InternalNode {
+  CommonHeader Header
+  Header InternalNodeHeader
+  ICells [510]ICell
+}
+
+struct Cell {
+  Key uint32
+  Value [230]byte
+}
+
+struct LeafNode {
+  CommonHeader Header
+  Header LeafNodeHeader
+  Cells  [17]Cell
+}
+
+struct Row {
+  Id uint32
+  Sex byte
+  Age uint8
+  Username [32]byte
+  Email [128]byte
+  Phone [64]byte
+}
