@@ -317,4 +317,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+.claude/
+
 # End of https://www.toptal.com/developers/gitignore/api/go,vue,intellij+all,macos,python
