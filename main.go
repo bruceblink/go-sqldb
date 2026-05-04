@@ -85,7 +85,6 @@ func main() {
 			return
 		}
 		_, _ = fmt.Fprintf(writer, "need /query?q=SELECT")
-		return
 	})
 	http.HandleFunc("/exec", func(writer http.ResponseWriter, request *http.Request) {
 		writer.Header().Set("Content-Type", "application/json")
@@ -113,7 +112,6 @@ func main() {
 			return
 		}
 		_, _ = fmt.Fprintf(writer, "need /exec?q=INSERT")
-		return
 	})
 	go http.ListenAndServe(":8080", nil)
 
